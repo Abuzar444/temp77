@@ -29,7 +29,7 @@ function BookingCalendar() {
 
     useEffect(() => {
         const selectedRage = generateDateRange(range)
-        selectedRage.some((date) => {
+        const isDisabledDateIncluded = selectedRage.some((date) => {
             if (unavailablesDates[date]) {
                 setRange(defaultSelected)
                 toast({
